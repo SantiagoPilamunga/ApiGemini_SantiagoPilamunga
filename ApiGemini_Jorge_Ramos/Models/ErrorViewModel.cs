@@ -1,0 +1,9 @@
+namespace ApiGemini_Jorge_Ramos.Models
+{
+    public class ErrorViewModel
+    {
+        public string? RequestId { get; set; }
+
+        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+    }
+}
