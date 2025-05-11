@@ -6,14 +6,14 @@ namespace ApiGemini_Jorge_Ramos.Repositories
     public class GeminiRepository : IChatBotService
     {
         HttpClient _httpclient;
-        private string apiKey = "AIzaSyClWXpaJdGGM17xH5pSXkhvNXoISM9kx8A";
+        private string apiKey = "AIzaSyAYWNhmxhY1OrQLShuozsXcrMitSMmlFcE";
         public GeminiRepository()
         {
             _httpclient = new HttpClient();
         }
         public async Task<string> GetChatbotResponse(string prompt)
         {
-            string url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=GEMINI_API_KEY"+apiKey;
+            string url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key="+apiKey;
             HttpRequestMessage message = new HttpRequestMessage(HttpMethod.Post, url);
 
             GeminiRequest request = new GeminiRequest
@@ -39,9 +39,5 @@ namespace ApiGemini_Jorge_Ramos.Repositories
             return answer;
         }
 
-        internal async Task<string> GetChatbotReponse(string v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

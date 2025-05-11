@@ -2,7 +2,7 @@
 {
     public interface IChatBotService
     {
-        public async Task<string> GetChatbotResponse(string prompt);
+        public Task<string> GetChatbotResponse(string prompt);
 
     }
 }
