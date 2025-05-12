@@ -1,7 +1,12 @@
+using ApiGemini_Jorge_Ramos.Interfaces;
+using ApiGemini_Jorge_Ramos.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddSingleton<IChatBotService, GeminiRepository>();
 
 var app = builder.Build();
 
